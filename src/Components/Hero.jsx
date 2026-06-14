@@ -203,8 +203,9 @@ const Hero = () => {
                         </motion.a>
 
                         <motion.a
-                            href="/resume.pdf"
-                            download
+                            href="https://drive.google.com/file/d/1R9nyMgV_FgFh_eRkGHMQ-O6yR7MjgQ5C/view?usp=drive_link"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="px-7 py-3.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all flex items-center gap-2 text-sm"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.96 }}
