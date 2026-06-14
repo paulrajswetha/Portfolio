@@ -3,12 +3,15 @@ import { motion } from 'framer-motion'
 
 const BackgroundDesign = () => {
     return (
-        <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900">
+        <div
+            className="fixed inset-0 -z-10 overflow-hidden"
+            style={{ background: '#04112b' }}
+        >
             {/* Main gradient blobs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Top-right purple blob */}
                 <motion.div
-                    className="absolute -top-60 -right-60 w-[600px] h-[600px] bg-gradient-to-br from-purple-400 via-indigo-400 to-transparent dark:from-purple-900 dark:via-indigo-900 dark:to-transparent rounded-full filter blur-[140px] opacity-30"
+                    className="absolute -top-60 -right-60 w-[600px] h-[600px] bg-[#0b2a4a] rounded-full filter blur-[140px] opacity-32"
                     animate={{
                         x: [0, 60, 0],
                         y: [0, -50, 0],
@@ -19,7 +22,7 @@ const BackgroundDesign = () => {
 
                 {/* Bottom-left blue blob */}
                 <motion.div
-                    className="absolute -bottom-60 -left-60 w-[600px] h-[600px] bg-gradient-to-tr from-blue-400 via-cyan-400 to-transparent dark:from-blue-900 dark:via-cyan-900 dark:to-transparent rounded-full filter blur-[140px] opacity-30"
+                    className="absolute -bottom-60 -left-60 w-[600px] h-[600px] bg-[#083049] rounded-full filter blur-[140px] opacity-28"
                     animate={{
                         x: [0, -50, 0],
                         y: [0, 60, 0],
@@ -30,7 +33,7 @@ const BackgroundDesign = () => {
 
                 {/* Center accent blob */}
                 <motion.div
-                    className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-gradient-to-b from-pink-300 via-rose-300 to-transparent dark:from-pink-900/50 dark:via-rose-900/50 dark:to-transparent rounded-full filter blur-[100px] opacity-20"
+                    className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-[#062a48] rounded-full filter blur-[100px] opacity-18"
                     animate={{
                         x: [0, 30, -30, 0],
                         y: [0, -30, 30, 0],
@@ -41,7 +44,7 @@ const BackgroundDesign = () => {
 
                 {/* Bottom-right accent blob */}
                 <motion.div
-                    className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-gradient-to-tl from-emerald-300 to-teal-300 dark:from-emerald-900/40 dark:to-teal-900/40 rounded-full filter blur-[120px] opacity-20"
+                    className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-[#07364f] rounded-full filter blur-[120px] opacity-14"
                     animate={{
                         x: [0, -40, 40, 0],
                         y: [0, 40, -40, 0],
@@ -68,7 +71,7 @@ const BackgroundDesign = () => {
                 {[...Array(15)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute w-1 h-1 rounded-full bg-gradient-to-r from-blue-400 to-purple-600 opacity-40"
+                        className="absolute w-1 h-1 rounded-full bg-[#1b6fff] opacity-36"
                         style={{
                             left: `${Math.random() * 100}%`,
                             top: `${Math.random() * 100}%`,

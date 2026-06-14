@@ -1,6 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { MdOutlineCode } from 'react-icons/md'
+import { FaJava, FaDatabase } from 'react-icons/fa'
+import { SiPython } from 'react-icons/si'
 import { skills } from '../data/constants'
 
 const categoryConfig = [
@@ -42,6 +45,77 @@ const categoryConfig = [
   },
 ]
 
+const badges = [
+  {
+    label: 'Problem Solving',
+    icon: MdOutlineCode,
+    stars: 4,
+    color: '#38bdf8',
+    active: true,
+  },
+  {
+    label: 'Java',
+    icon: FaJava,
+    stars: 4,
+    color: '#f97316',
+    active: false,
+  },
+  {
+    label: 'Python',
+    icon: SiPython,
+    stars: 3,
+    color: '#34d399',
+    active: false,
+  },
+  {
+    label: 'SQL',
+    icon: FaDatabase,
+    stars: 4,
+    color: '#facc15',
+    active: false,
+  },
+]
+
+const HexBadge = ({ badge, index }) => {
+  const Icon = badge.icon
+  return (
+    <motion.div
+      className="flex flex-col items-center gap-3 min-w-[135px]"
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      viewport={{ once: true }}
+    >
+      <motion.div
+        className="relative"
+        whileHover={{ scale: 1.08, y: -3 }}
+        transition={{ type: 'spring', stiffness: 300 }}
+      >
+        <div
+          className="w-20 h-20 flex items-center justify-center rounded-[18px]"
+          style={{
+            background: `linear-gradient(145deg, ${badge.color}15, ${badge.color}22)`,
+            border: `2px solid ${badge.color}`,
+          }}
+        >
+          <Icon
+            style={{ width: 32, height: 32, color: badge.active ? '#38bdf8' : '#94a3b8' }}
+          />
+        </div>
+      </motion.div>
+      <span className="text-xs font-semibold text-slate-200 text-center leading-tight">{badge.label}</span>
+      <div className="flex gap-0.5">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <span
+            key={i}
+            className={`block w-2.5 h-2.5 rounded-full ${i < badge.stars ? 'bg-amber-400' : 'bg-slate-600'}`}
+          />
+        ))}
+      </div>
+    </motion.div>
+  )
+}
+
 const SkillPill = ({ skill, iconColor, lightBg, border, hoverBorder, delay }) => {
   return (
     <motion.div
@@ -74,6 +148,19 @@ const Skills = () => {
 
   return (
     <div className="section-container" ref={ref}>
+
+      <div className="max-w-6xl mx-auto mb-10 rounded-3xl border border-slate-700/70 bg-slate-950/80 p-6">
+        <div className="text-center mb-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-sky-400/80 font-semibold">Badge Highlights</p>
+          <h3 className="text-2xl font-semibold text-white mt-3">Most valuable strengths, shown first</h3>
+        </div>
+        <div className="flex flex-wrap justify-center gap-6">
+          {badges.map((badge, index) => (
+            <HexBadge key={badge.label} badge={badge} index={index} />
+          ))}
+        </div>
+      </div>
+
       <motion.h2
         className="section-title"
         initial={{ opacity: 0, y: 20 }}

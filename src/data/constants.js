@@ -31,6 +31,8 @@ export const personalInfo = {
   location: "Villapuram, Tamil Nadu, India",
   github: "https://github.com/paulrajswetha",
   linkedin: "https://www.linkedin.com/in/swetha-paulraj/",
+  leetcode: "https://leetcode.com/u/swethapaulraj/",
+  hackerrank: "https://www.hackerrank.com/profile/swetha04",
   shortBio:
     "Future-ready Software Development Engineer specializing in Full Stack Development, blending intuitive UI design with powerful backend logic to create seamless, scalable web applications that solve real-world problems.",
   profilePhoto: "/profile-photo.jpg",
