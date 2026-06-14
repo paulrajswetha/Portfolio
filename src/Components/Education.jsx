@@ -25,7 +25,6 @@ const Education = () => {
       <div className="relative">
         {/* Timeline Line */}
         <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
-
         {education.map((edu, index) => (
           <motion.div
             key={edu.id}
